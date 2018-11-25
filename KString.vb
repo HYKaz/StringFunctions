@@ -1,7 +1,7 @@
 ﻿Imports System.Globalization
 
 Public Class KString
-    Private Function KRemoveWhiteSpace(ByVal strText As String) As String
+    Public Function KRemoveWhiteSpace(ByVal strText As String) As String
         Dim S As String
         S = System.Text.RegularExpressions.Regex.Replace(strText, " ", String.Empty, System.Text.RegularExpressions.RegexOptions.IgnoreCase)
         S = System.Text.RegularExpressions.Regex.Replace(strText, " ", String.Empty, System.Text.RegularExpressions.RegexOptions.IgnoreCase)
@@ -9,7 +9,7 @@ Public Class KString
         Return S
     End Function
 
-    Private Function KRemoveLineFeeds(ByVal strText As String) As String
+    Public Function KRemoveLineFeeds(ByVal strText As String) As String
         Dim S As String
 
         S = System.Text.RegularExpressions.Regex.Replace(strText, ControlChars.NewLine, String.Empty, System.Text.RegularExpressions.RegexOptions.IgnoreCase)
@@ -23,14 +23,14 @@ Public Class KString
         Return S
 
     End Function
-    Public Function Clean(ByVal Str As String) As String
+    Public Function KCleanString(ByVal Str As String) As String
         Dim S As String = ""
         S = KRemoveWhiteSpace(Str)
         S = KRemoveLineFeeds(S)
         Return S
     End Function
 
-    Public Function OpenTextFile(ByVal sourceFilePath As String) As String
+    Public Function KOpenTextFile(ByVal sourceFilePath As String) As String
 
         Dim result As String
         result = ""
